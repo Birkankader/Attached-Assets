@@ -1,0 +1,14 @@
+Bilgisayarımda AI CLI'ları birlikte kullanmak için bir masaüstü uygulama geliştirmek istiyorum. Multi platform olacak.
+- Bilgisayarda bulunan AI Agentları tarayacak. (Claude code, codex, gemini etc...)
+- Bulunanları listeleyecek. Loginlerini tarayacak. Login olunmamışsa o agent'ı seçilemez yapıp yanında Login olunmalı, need auth gibi bir uyarı çıkacak.
+- Çalışma mantığı şu olacak; kullanıcı bir master agent seçecek. Bu kişi orkestra şefi olacak. Yine kullanıcı orkestranın parçalarını seçecek. Örnek; Şef Claude Opus, Workerlar 2x Gemini, 1 Codex, 1 Claude Opus, 1 Claude Haiku. Bunların tamamını UI üzerinden yapacak.
+- Uygulama arkada Şef'in terminalini açacak ve verilen görevi workerlara bölecek. Böldükten sonra kullanıcıya görev listesi ve onu yapan worker bir liste ile gelecek. Kullanıcı istediğini kendisi değiştirebilecek. Görev listesi ve o görevin hangi agentta olduğu bir kanban board ile ekranda görüntülenebilecek.
+- Her ayrı agent ayrı worktreelerde çalışacak.
+- Her biri işi bittiğinde bittiğini haber verecek ve o iş merge bekleyen işlere dahil edilecek.
+- Tüm işler tamamlandığında Master agent code review yapacak ve kullanıcıya bilgi verecek. Daha sonra kullanıcıdan code review bekleyecek. Kullanıcı yaparsa master agent ile iletişim kuracak. Yapmazsa da Master agent'ın code review'ını kabul edecek. 
+- Daha sonra code review'ı biten worktree agent'ı PR açıp yaptığı yapmayı amaçlığı şeyi commit mesajına yazacak ve masterın code review'ı kabul ettiğini söyleyecek. 
+- Burada eğer kullanıcı ekstra bir şey söylememişse PR'ı kendisi birleştirecek. Eğer ayarlardan Auto Merge seçeneğini açtıysa PR'ı master agent birleştirecek. 
+- Yapılan her adımı kullanıcı bir UI üzerinden takip edecek.
+- Kullanıcı eğer developer modu açarsa Her bir agent'ın terminaline erişip müdahale edebilecek ve kendi promptlarını girebilecek. Girdiği her prompt yine UI'a yansıyacak. 
+- Kullanıcının her bir agent için kalan kotası başka bir sekmeden görüntülenebilecek. OpenUsage nasıl yapıyorsa öyle yapılacak. 
+- UI tasarımı da Conductor.build'dan ilham alınabilir.
